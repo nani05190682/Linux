@@ -10,4 +10,6 @@ $- Normal User
 ![image](https://user-images.githubusercontent.com/87597729/177003964-dfc0fdf2-9c1e-4fc6-afb9-bad8245b0253.png)
 
 #Switching between Accounts
-![image](https://user-images.githubusercontent.com/87597729/177003966-e11cb348-fdca-481e-8232-dad923abbf64.png)
+
+Switching between Accounts
+![image](https://user-images.githubusercontent.com/87597729/177003979-cd1bfda4-774c-490a-839a-b30679e9fabc.png)
