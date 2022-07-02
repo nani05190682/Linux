@@ -19,29 +19,6 @@ $ - Normal User
 
 #Switching between Accounts
 
+![image](https://user-images.githubusercontent.com/87597729/177003854-ea19f591-34b0-4188-973c-dd86a634beb2.png)
 
-[root@localhost ~]# su - prashanth
-[prashanth@vt ~]$ whoami
-prashanth
-[prashanth@vt ~]$ exit
-logout
-[root@localhost ~]#
-[root@localhost ~]# su - jp
-Last login: Fri Jul  1 23:49:18 PDT 2022 on pts/1
-[jp@vt ~]$ whoami
-jp
-[jp@vt ~]$ su - punith
-Password:
-Last login: Fri Jul  1 23:48:55 PDT 2022 on pts/1
-[punith@vt ~]$ whoami
-punith
-[punith@vt ~]$ su - jp
-Password:
-Last login: Fri Jul  1 23:50:01 PDT 2022 on pts/1
-[jp@vt ~]$ whoami
-jp
-[jp@vt ~]$ su -
-Password:
-Last login: Fri Jul  1 22:34:21 PDT 2022 on pts/1
-[root@vt ~]#![image](https://user-images.githubusercontent.com/87597729/177003815-dd93d9bc-5b58-4d77-875b-0d9d55e04389.png)
 
