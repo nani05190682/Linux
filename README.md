@@ -24,9 +24,9 @@ $- Normal User
        normaluser2
 2. Set the password for the accounts
 
-      normaluser1 - password1 ( password )
+      normaluser1 -> password1 
       
-      normaluser2 - password2 ( password)
+      normaluser2 -> password2 
 3. Check which user you are currently logged in by using "**whoami**" command
 4. From root account switch to normaluser1
     Note: It will not prompt for the password as you are an administrator
