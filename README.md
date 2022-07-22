@@ -14,3 +14,17 @@ $- Normal User
 # Switching between Accounts
 
 ![image](https://user-images.githubusercontent.com/87597729/177003992-f5669099-a15e-45f1-be31-cc99e6129401.png)
+
+
+# Lab Exercise
+1. Create the following user accounts
+      a. normaluser1
+      b. normaluser2
+2. Set the password for the accounts
+      a. normaluser1 - password1 ( password )
+      b. normaluser2 - password2 ( password)
+3. Check which user you are currently logged in by using "**whoami**" command
+4. From root account switch to normaluser1
+    Note: It will not prompt for the password as you are an administrator
+5. From normaluser1 switch to normaluser2 account
+6. Form normaluser2 switch to root
