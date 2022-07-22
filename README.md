@@ -29,6 +29,8 @@ $- Normal User
       normaluser2 -> password2 
 3. Check which user you are currently logged in by using "**whoami**" command
 4. From root account switch to normaluser1
+    
     Note: It will not prompt for the password as you are an administrator
+    
 5. From normaluser1 switch to normaluser2 account
 6. Form normaluser2 switch to root
