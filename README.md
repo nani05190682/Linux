@@ -18,9 +18,10 @@ $- Normal User
 
 # Lab Exercise
 1. Create the following user accounts
-      > normaluser1
+
+       normaluser1
       
-      > normaluser2
+       normaluser2
 2. Set the password for the accounts
 
       a. normaluser1 - password1 ( password )
