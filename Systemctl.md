@@ -46,35 +46,35 @@
 
 1.  List all service units on the system.
 
-   **[root@serverX ~]$  systemctl list-units --type=service**
+         [root@serverX ~]$  systemctl list-units --type=service
    
 2.  List all socket units, active and inactive, on the system.
 
-   **[root@serverX ~]$  systemctl list-units --type=socket --all**
+         [root@serverX ~]$  systemctl list-units --type=socket --all
     
 3. Explore the status of the chronyd service. This service is used for network time synchronization (NTP)
 
    3.1.  Display the status of the chronyd service. Note the process ID of any active daemon
 
 
-         **[root@serverX ~]$  systemctl status chronyd**
+         [root@serverX ~]$  systemctl status chronyd
          
     3.2. Confirm that the listed daemons are running.
 
 
-         **[student@serverX ~]$ ps -p PID**
+         [student@serverX ~]$ ps -p PID
          
  4. Explore the status of the sshd service. This service is used for secure encrypted communication between systems.
  
     4.1. Determine if the sshd service is enabled to start at system boot
 
 
-         **[root@serverX ~]$  systemctl is-enabled sshd**
+         [root@serverX ~]$  systemctl is-enabled sshd
          
     4.2. Determine if the sshd service is active without displaying all of the status information
 
 
-         **[student@serverX ~]$ sudo systemctl is-active sshd**
+         [student@serverX ~]$ sudo systemctl is-active sshd
          
          
     4.3. Display the status of the sshd service.
