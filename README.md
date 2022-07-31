@@ -106,6 +106,47 @@ To send a foreground process to the background, first press the keyboard-generat
 
 ![image](https://user-images.githubusercontent.com/87597729/182024730-4bc3e5d8-9f1a-4d97-87c3-407e5874e933.png)
 
+To start the suspended process running in the background, use the **bg** command with the samejob ID.
+![image](https://user-images.githubusercontent.com/87597729/182024815-92b394ee-4604-44fa-a36b-0e7fc73ba0cd.png)
+
+
+# Practice: Background and Foreground Processes
+# Lab
+Log in as student to serverX. Begin in student's home directory.
+
+1.  Open two terminal windows, side by side, to be referred to as left and right.
+2.   In the left window, start a process that continuously appends the word "rock" and a space to the file ~/outfile at one-second intervals. The complete command set must be contained in parentheses for job control to interpret the set as a single job.
+![image](https://user-images.githubusercontent.com/87597729/182024868-daa21934-186f-44b9-a754-a6a96267f6f7.png)
+3.  In the right window, use tail to confirm that the new process is writing to the file.
+![image](https://user-images.githubusercontent.com/87597729/182024979-1f5316c9-7ab8-4e8e-9d10-02da8cfd48e5.png)
+4.   In the left window, suspend the running process. The shell returns the job ID in square brackets. In the right window, confirm that the process output has stopped.
+![image](https://user-images.githubusercontent.com/87597729/182025000-db46d969-f9d8-4dfd-9f95-4d066f970c74.png)
+
+5. In the left window, view the jobs list. The + denotes the current job. Restart the job in the background. In the right window, confirm that the process output is again active. 
+ ![image](https://user-images.githubusercontent.com/87597729/182025028-419879f9-2eec-4e42-bf9e-986b6d6122d2.png)
+
+6. In the left window, start two more processes to append to the same output file. Replace "rock" with "paper," and then with "scissors." To properly background the process, the complete command set must be contained in parentheses and ended with an ampersand.
+![image](https://user-images.githubusercontent.com/87597729/182025055-19b52587-22dd-465c-9607-225939eaafd2.png)
+
+7. In the left window, view jobs to see all three processes "Running". In the right window, confirm that all three processes are appending to the file.
+![image](https://user-images.githubusercontent.com/87597729/182025068-5ec70edd-7951-453a-b15e-2ff4059e07a0.png)
+
+8. Using only commands previously learned, suspend the "rock" process. In the left window, foreground the job, using the job ID determined from the jobs listing, then suspend it using Ctrl+z. Confirm that the "rock" process is "Stopped". In the right window, confirm that "rock" output is no longer active.
+![image](https://user-images.githubusercontent.com/87597729/182025088-1e6e4305-c22a-4604-9170-60261fc20495.png)
+
+9. End the "paper" process. In the left window, foreground the job, then terminate it using Ctrl+c. Confirm that the "paper" process has disappeared. In the right window, confirm that "paper" output is no longer active.
+
+![image](https://user-images.githubusercontent.com/87597729/182025111-8ff23b56-b3a9-4f82-8bbd-819bc7941c05.png)
+
+10.  In the left window, view the remaining jobs using ps. The suspended job has state T. Theother background job is sleeping (S), since ps is "on cpu" (R) while displaying.
+![image](https://user-images.githubusercontent.com/87597729/182025124-d0ecec80-6751-479a-9670-9a17ff28578d.png)
+
+11.   Stop the remaining two jobs. In the left window, foreground either job. Terminate it using Ctrl+c. Repeat with the remaining job. The "Stopped" job temporarily restarts when foregrounded. Confirm that no jobs remain and that output has stopped.
+![image](https://user-images.githubusercontent.com/87597729/182025147-4eba7751-74a5-4cd1-87cd-7e7748487e98.png)
+
+12.    In the right window, stop the tail command. Close extra terminal windows.
+![image](https://user-images.githubusercontent.com/87597729/182025158-42fe7d18-f2c6-49ee-9251-120baa57e626.png)
+
 
 
 
