@@ -37,7 +37,10 @@ $- Normal User
 
 # Controlling Access to files with Linux File System Permissions
 # Objectives
+
 • Explain how the Linux file permissions model works.
-• Change the permissions and ownership of files using
-command-line tools.
+
+• Change the permissions and ownership of files using command-line tools.
+
 • Configure a directory in which newly created files are automatically writable by members of the group which owns the directory, using special permissions and default umask settings.
+
