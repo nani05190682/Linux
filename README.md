@@ -35,7 +35,7 @@ $- Normal User
 5. From normaluser1 switch to normaluser2 account
 6. Form normaluser2 switch to root
 
-# Moniroting and Managing Linux Process
+# Monitoring and Managing Linux Process
 
 # Objectives
 1. List and interpret basic information about processes running on the system.
