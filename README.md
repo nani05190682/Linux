@@ -35,12 +35,54 @@ $- Normal User
 5. From normaluser1 switch to normaluser2 account
 6. Form normaluser2 switch to root
 
-# Controlling Access to files with Linux File System Permissions
+# Moniroting and Managing Linux Process
+
 # Objectives
+1. List and interpret basic information about processes running on the system.
+2. Control processes in the shell's session using bash job control.
+3. Terminate and control processes using signals.
+4. Monitor resource usage and system load due to process activity.
 
-• Explain how the Linux file permissions model works.
 
-• Change the permissions and ownership of files using command-line tools.
+# What is Process?
 
-• Configure a directory in which newly created files are automatically writable by members of the group which owns the directory, using special permissions and default umask settings.
+A process is a running instance of a launched, executable program. A process consists of:
+
+• an address space of allocated memory,
+
+• security properties including ownership credentials and privileges,
+
+• one or more execution threads of program code, and
+
+• the process state.
+
+
+# How Process Works?
+
+An existing (parent) process duplicates its own address space (fork) to create a new (child)
+process structure. 
+
+Every new process is assigned a unique process ID (PID) for tracking and security.
+
+The PID and the parent's process ID (PPID) are elements of the new process environment. 
+
+Any process may create a child process. All processes are descendants of the first system process, which is systemd(1) on a Red Hat Enterprise Linux 7 system.
+
+# Process Life Cycle
+![image](https://user-images.githubusercontent.com/87597729/182024374-8d55ea93-4fe0-484a-ad72-eb0443862735.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
