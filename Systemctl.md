@@ -16,11 +16,13 @@
 
 
     **[root@serverX ~]# systemctl is-active sshd
+    
     [root@serverX ~]# systemctl is-enabled sshd**
 5. List the active state of all loaded units. Optionally, limit the type of unit. The --all option will add inactive units.
 
 
    **[root@serverX ~]# systemctl list-units --type=service**
+   
    **[root@serverX ~]# systemctl list-units --type=service --all**
     
     
