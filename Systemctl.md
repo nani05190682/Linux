@@ -1,7 +1,7 @@
 # systemctl lab-01
 1. Query the state of all units to verify a system startup.
 
-    **systemctl**
+         systemctl
 
 2. Query the state of only the service units
 
