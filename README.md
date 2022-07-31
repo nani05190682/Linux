@@ -72,6 +72,11 @@ process structure.
 ![image](https://user-images.githubusercontent.com/87597729/182024374-8d55ea93-4fe0-484a-ad72-eb0443862735.png)
 
 
+* Through the fork routine, a child process inherits security identities, previous and current file descriptors, port and resource privileges, environment variables, and program code.
+* A child process may then exec its own program code. 
+* Normally, a parent process sleeps while the child process runs, setting a request (wait) to be signaled when the child completes.
+* Upon exit, the child process has already closed or discarded its resources and environment; the remainder is referred to as a zombie.\
+* The parent, signaled awake when the child exited, cleans the remaining structure, then continues with its own program code execution.
 
 
 
