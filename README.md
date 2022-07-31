@@ -34,3 +34,10 @@ $- Normal User
     
 5. From normaluser1 switch to normaluser2 account
 6. Form normaluser2 switch to root
+
+# Controlling Access to files with Linux File System Permissions
+# Objectives
+• Explain how the Linux file permissions model works.
+• Change the permissions and ownership of files using
+command-line tools.
+• Configure a directory in which newly created files are automatically writable by members of the group which owns the directory, using special permissions and default umask settings.
