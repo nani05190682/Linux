@@ -81,6 +81,10 @@
 
 
          [root@serverX ~]$  systemctl status sshd
+         
+ 5. List the enabled or disabled states of all service units.
+         [root@serverX ~]$  systemctl list-unit-files --type=service
+
     
      
 
