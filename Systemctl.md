@@ -1,4 +1,4 @@
-# systemctl lab
+# systemctl lab-01
 1. Query the state of all units to verify a system startup.
 
     **systemctl**
@@ -37,3 +37,14 @@
 
 
      **[root@serverX ~]# systemctl --failed --type=service**
+
+====================================================================================================================================================================
+
+# systemctl lab-02
+
+# Identify the Status of systemd Units
+
+1.  List all service units on the system.
+
+   **[student@serverX ~]$ sudo systemctl list-units --type=service**
+
