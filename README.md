@@ -147,6 +147,68 @@ Log in as student to serverX. Begin in student's home directory.
 12.    In the right window, stop the tail command. Close extra terminal windows.
 ![image](https://user-images.githubusercontent.com/87597729/182025158-42fe7d18-f2c6-49ee-9251-120baa57e626.png)
 
+# Killing Processes
+# Process control using signals
+![image](https://user-images.githubusercontent.com/87597729/182026417-d450d6ce-b134-4774-b3bd-e95ae33e6430.png)
+
+The kill command sends a signal to a process by ID. Despite its name, the kill command can be used for sending any signal, not just those for terminating programs.
+![image](https://user-images.githubusercontent.com/87597729/182026458-badb3317-2282-4646-9631-67ccf61d599e.png)
+
+Use killall to send a signal to one or more processes matching selection criteria, such as a command name, processes owned by a specific user, or all system-wide processes.
+![image](https://user-images.githubusercontent.com/87597729/182026503-27cb49e6-a711-4373-8f13-32b3f7ec98d3.png)
+
+The pkill command, like killall, can signal multiple processes. pkill uses advanced selection criteria, which can include combinations of:
+   Command — Processes with a pattern-matched command name.
+   UID — Processes owned by a Linux user account, effective or real.
+   GID — Processes owned by a Linux group account, effective or real.
+   Parent — Child processes of a specific parent process.
+   Terminal — Processes running on a specific controlling terminal.
+
+![image](https://user-images.githubusercontent.com/87597729/182026520-75c85342-edd6-4ccb-b1cf-3f8aec07488b.png)
+![image](https://user-images.githubusercontent.com/87597729/182026525-86b4549a-6249-4337-82e2-9ee8ff38828f.png)
+
+# Logging users out administratively
+1. The w command views users currently logged into the system and their cumulative activities.
+
+2. Remote users display their connecting system name in the FROM column when using the -f option
+![image](https://user-images.githubusercontent.com/87597729/182026603-74c1a498-aef1-4392-b725-7890ae12ebbc.png)
+
+Processes and sessions can be individually or collectively signaled. To terminate all processes for one user, use the pkill command.
+![image](https://user-images.githubusercontent.com/87597729/182026631-a559d32c-0216-424f-a82c-ef6cb8174607.png)
+![image](https://user-images.githubusercontent.com/87597729/182026638-29c95eab-e6cd-4ac7-8df5-2cbeeb6dc32a.png)
+![image](https://user-images.githubusercontent.com/87597729/182026654-92173e3f-e777-4b2b-a60c-2229580821c5.png)
+![image](https://user-images.githubusercontent.com/87597729/182026658-4db01899-afd6-4646-a433-0d2f9c42d027.png)
+
+# Monitoring Process Activity
+# Load average
+![image](https://user-images.githubusercontent.com/87597729/182026715-fbec706f-6cf5-4a2f-a0a5-e0d4ccf438b7.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
