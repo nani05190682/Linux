@@ -79,6 +79,38 @@ process structure.
 * The parent, signaled awake when the child exited, cleans the remaining structure, then continues with its own program code execution.
 
 
+# Process states
+
+![image](https://user-images.githubusercontent.com/87597729/182024549-dd3745bc-3699-44ed-a94d-45aecb391b2d.png)
+
+![image](https://user-images.githubusercontent.com/87597729/182024560-4a70217f-32dd-484c-b30c-3143280b66bd.png)
+
+![image](https://user-images.githubusercontent.com/87597729/182024571-860f6f89-5713-470c-baef-247e19cc28cd.png)
+
+
+# Listing processes
+![image](https://user-images.githubusercontent.com/87597729/182024599-8143bc63-f7a4-419a-bc47-25a4aaa80e4b.png)
+![image](https://user-images.githubusercontent.com/87597729/182024611-b6c95c09-2171-469b-b9c3-360761c2ff17.png)
+
+
+# Controlling Jobs
+# Running jobs in the background
+![image](https://user-images.githubusercontent.com/87597729/182024642-1b928dc8-fb00-4df6-97f6-691afbdd3879.png)
+# Viewing background Jobs
+![image](https://user-images.githubusercontent.com/87597729/182024666-4fc680f8-cae7-462f-95e6-9c5699673eaf.png)
+
+A background job can be brought to the foreground by using the fg command with its job ID
+![image](https://user-images.githubusercontent.com/87597729/182024690-aeef180a-9f64-413d-abc7-50eeb1833dfd.png)
+
+To send a foreground process to the background, first press the keyboard-generated suspend request **(Ctrl+z)** on the terminal.
+
+![image](https://user-images.githubusercontent.com/87597729/182024730-4bc3e5d8-9f1a-4d97-87c3-407e5874e933.png)
+
+
+
+
+
+
 
 
 
