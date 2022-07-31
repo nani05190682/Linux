@@ -80,7 +80,7 @@
     4.3. Display the status of the sshd service.
 
 
-         **[root@serverX ~]$  systemctl status sshd**
+         [root@serverX ~]$  systemctl status sshd
     
      
 
