@@ -15,9 +15,11 @@
 4. The status argument may also be used to determine if a particular unit is active and show if the unit is enabled to start at boot time. Alternate commands can also easily show the active and enabled states:
 
 
-    **[root@serverX ~]# systemctl is-active sshd
+    **[root@serverX ~]# systemctl is-active sshd**
     
-    [root@serverX ~]# systemctl is-enabled sshd**
+    **[root@serverX ~]# systemctl is-enabled sshd**
+    
+    
 5. List the active state of all loaded units. Optionally, limit the type of unit. The --all option will add inactive units.
 
 
