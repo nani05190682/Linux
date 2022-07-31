@@ -10,7 +10,7 @@
 3. Investigate any units which are in a failed or maintenance state. Optionally, add the -l option to show the full output.
 
 
-  **[root@serverX ~]# systemctl status rngd.service -l**
+    **[root@serverX ~]# systemctl status rngd.service -l**
 
 4. The status argument may also be used to determine if a particular unit is active and show if the unit is enabled to start at boot time. Alternate commands can also easily show the active and enabled states:
 
