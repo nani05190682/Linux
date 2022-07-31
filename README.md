@@ -59,14 +59,14 @@ A process is a running instance of a launched, executable program. A process con
 
 # How Process Works?
 
-An existing (parent) process duplicates its own address space (fork) to create a new (child)
+* An existing (parent) process duplicates its own address space (fork) to create a new (child)
 process structure. 
 
-Every new process is assigned a unique process ID (PID) for tracking and security.
+* Every new process is assigned a unique process ID (PID) for tracking and security.
 
-The PID and the parent's process ID (PPID) are elements of the new process environment. 
+* The PID and the parent's process ID (PPID) are elements of the new process environment. 
 
-Any process may create a child process. All processes are descendants of the first system process, which is systemd(1) on a Red Hat Enterprise Linux 7 system.
+* Any process may create a child process. All processes are descendants of the first system process, which is systemd(1) on a Red Hat Enterprise Linux 7 system.
 
 # Process Life Cycle
 ![image](https://user-images.githubusercontent.com/87597729/182024374-8d55ea93-4fe0-484a-ad72-eb0443862735.png)
