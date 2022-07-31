@@ -40,9 +40,7 @@
 
 ============================================================================================
 
-# systemctl lab-02
-
-# Identify the Status of systemd Units
+# systemctl lab-02 Identify the Status of systemd Units
 
 1.  List all service units on the system.
 
