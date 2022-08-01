@@ -36,7 +36,7 @@
  7. View only failed services
 
 
-         [root@serverX ~]# systemctl --failed --type=service
+         $ systemctl list-unit-files --failed --type=service
 
 ============================================================================================
 
