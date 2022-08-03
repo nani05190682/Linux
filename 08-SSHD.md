@@ -11,9 +11,9 @@
 # What is the OpenSSH secure shell (SSH)?
 
 
-The term OpenSSH refers to the software implementation of the Secure Shell software used in the system.
+• The term OpenSSH refers to the software implementation of the Secure Shell software used in the system.
 
-The OpenSSH Secure Shell, ssh, is used to securely run a shell on a remote system.
+• The OpenSSH Secure Shell, ssh, is used to securely run a shell on a remote system.
 
 If you have a user account on a remote Linux system providing SSH services, ssh is the command normally used to remotely log into that system.
 
@@ -22,19 +22,23 @@ If you have a user account on a remote Linux system providing SSH services, ssh 
 # Secure Shell examples 
 
 Create a remote interactive shell as the current user, then return to your previous shell when done with the exit command.
+![image](https://user-images.githubusercontent.com/87597729/182511619-f125f1d6-48b0-4768-b3e9-85b796215b1f.png)
 
 
 
 Connect to a remote shell as a different user (remoteuser) on a selected host (remotehost):
+![image](https://user-images.githubusercontent.com/87597729/182511627-b68d917d-73dd-4321-8fd5-0cce728100f3.png)
 
 
 
 
 Execute a single command (hostname) on a remote host (remotehost) and as a remote user (remoteuser) in a way that returns the output to the local display: 
+![image](https://user-images.githubusercontent.com/87597729/182511636-6c2678f7-4ded-4c2a-94f2-0fe99278d001.png)
 
 
 
 The w command displays a list of users currently logged into the computer. This is especially useful to show which users are logged in using ssh from which remote locations, and what they are doing.
+![image](https://user-images.githubusercontent.com/87597729/182511648-0be75c0b-9c54-44f4-9d3a-3d547c5beec8.png)
 
 
 
@@ -60,11 +64,13 @@ Every time the user connects after that, the client makes sure it gets the same 
 
 Host IDs are stored in ~/.ssh/known_hosts on your local client system:
 
+![image](https://user-images.githubusercontent.com/87597729/182511664-4e83e80a-3af3-44d1-ae30-e0ae98790516.png)
 
 
 
 Host keys are stored in /etc/ssh/ssh_host_key* on the SSH server.
 
+![image](https://user-images.githubusercontent.com/87597729/182511683-997253ec-eb79-4c66-9712-40fcb794ebad.png)
 
 
 
