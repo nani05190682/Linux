@@ -49,26 +49,26 @@ The w command displays a list of users currently logged into the computer. This 
 
 # SSH host keys
 
-SSH secures communication through public-key encryption.
+• SSH secures communication through public-key encryption.
 
-ssh client connects to an SSH server, before the client logs in, the server sends it a copy of its public key. 
+• ssh client connects to an SSH server, before the client logs in, the server sends it a copy of its public key. 
 
-This is used to set up the secure encryption for the communication channel and to authenticate the server to the client. 
+• This is used to set up the secure encryption for the communication channel and to authenticate the server to the client. 
 
 
-The first time a user uses ssh to connect to a particular server, the ssh command stores the server's public key in the user's ~/.ssh/known_hosts file.
+• The first time a user uses ssh to connect to a particular server, the ssh command stores the server's public key in the user's ~/.ssh/known_hosts file.
 
-Every time the user connects after that, the client makes sure it gets the same public key from the server by comparing the server's entry in the ~/.ssh/known_hosts file to the public key the server sent.
+• Every time the user connects after that, the client makes sure it gets the same public key from the server by comparing the server's entry in the ~/.ssh/known_hosts file to the public key the server sent.
 
 . If the keys do not match, the client assumes that the network traffic is being hijacked or that the server has been compromised, and breaks the connection
 
-Host IDs are stored in ~/.ssh/known_hosts on your local client system:
+• Host IDs are stored in ~/.ssh/known_hosts on your local client system:
 
 ![image](https://user-images.githubusercontent.com/87597729/182511664-4e83e80a-3af3-44d1-ae30-e0ae98790516.png)
 
 
 
-Host keys are stored in /etc/ssh/ssh_host_key* on the SSH server.
+• Host keys are stored in /etc/ssh/ssh_host_key* on the SSH server.
 
 ![image](https://user-images.githubusercontent.com/87597729/182511683-997253ec-eb79-4c66-9712-40fcb794ebad.png)
 
@@ -79,42 +79,46 @@ Host keys are stored in /etc/ssh/ssh_host_key* on the SSH server.
 # SSH key-based authentication
 
 
-Users can authenticate ssh logins without a password by using public key authentication.
+• Users can authenticate ssh logins without a password by using public key authentication.
 
-ssh allows users to authenticate using a private-public key scheme. 
+• ssh allows users to authenticate using a private-public key scheme. 
 
-This means that two keys are generated, a private key and a public key. 
+• This means that two keys are generated, a private key and a public key. 
 
-The private key file is used as the authentication credential, and like a password, must be kept secret and secure.
+• The private key file is used as the authentication credential, and like a password, must be kept secret and secure.
 
 The public key is copied to systems the user wants to log into, and is used to verify the private key. 
 
-The public key does not need to be secret. 
+• The public key does not need to be secret. 
 
-An SSH server that has the public key can issue a challenge that can only be answered by a system holding your private key. . As a result, you can authenticate using the presence of your key. 
+• An SSH server that has the public key can issue a challenge that can only be answered by a system holding your private key. . As a result, you can authenticate using the presence of your key. 
 
-Key generation is done using the ssh-keygen command. This generates the private key ~/.ssh/id_rsa and the public key ~/.ssh/id_rsa.pub. 
+• Key generation is done using the ssh-keygen command. This generates the private key ~/.ssh/id_rsa and the public key ~/.ssh/id_rsa.pub. 
 
 
-LAB Exercise:
+# LAB Exercise:
 
-	1. Login to your host and create a private and public key.
+1. Login to your host and create a private and public key.
+![image](https://user-images.githubusercontent.com/87597729/182511763-74c2ee2b-890f-4a6f-b5ae-faa7eda043e9.png)
 	
 
 
 Copy the public key to remote host.
 
+![image](https://user-images.githubusercontent.com/87597729/182511775-7bc0dcd6-af6b-496f-bc64-b0f93f9005d2.png)
 
 
 
 
 2. Disable ssh login for the root user and password-based SSH authentication on serverX.
 
+![image](https://user-images.githubusercontent.com/87597729/182511800-431751b9-0a9c-45d0-90c4-20b4415bdc72.png)
 
 
 
 
 Restart the SSHD service
+![image](https://user-images.githubusercontent.com/87597729/182511815-9dd59d70-6986-4ef4-818e-f15df5790119.png)
 
 
 
