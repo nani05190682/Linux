@@ -1,0 +1,63 @@
+Services and Daemons
+Runlevels:
+0 - Shutdown
+1 - Single user mode
+2 - Multi-User without networking
+3 - Multi-User with Networking but no GUI
+4 - Unused
+5 - Graphical User Interface
+6 - Reboot
+
+
+============================================================================
+[root@server ~]# cat /etc/inittab
+# inittab is no longer used.
+#
+# ADDING CONFIGURATION HERE WILL HAVE NO EFFECT ON YOUR SYSTEM.
+#
+# Ctrl-Alt-Delete is handled by /usr/lib/systemd/system/ctrl-alt-del.target
+#
+# systemd uses 'targets' instead of runlevels. By default, there are two main targets:
+#
+# multi-user.target: analogous to runlevel 3
+# graphical.target: analogous to runlevel 5
+#
+# To view current default target, run:
+# systemctl get-default
+#
+# To set a default target, run:
+# systemctl set-default TARGET.target
+
+======================================================================
+[root@server ~]# runlevel ## commands shows the runlevel
+N 5
+[root@server ~]#
+
+
+Changing Runlevels:
+
+[root@server ~]# systemctl get-default
+graphical.target
+
+
+[root@server ~]# systemctl set-default multi-user.target
+Removed /etc/systemd/system/default.target.
+Created symlink /etc/systemd/system/default.target → /usr/lib/systemd/system/multi-user.target.
+
+
+[root@server ~]# systemctl get-default
+multi-user.target
+[root@server ~]#
+
+
+systemctl status crond ## Checks the status of Cron Service
+systemctl start crond ## Starts Cron Service
+systemctl stop crond ## Stops Cron Service
+systemctl restart crond ## Restarts ( stop/start) the cron service
+systemctl reload crond ## Reloads the configuration changes
+systemctl is-active crond ## Checks the service is active
+systemctl is-enabled crond.service  # checks the service is enable at boot time
+systemctl disable crond.service  # disable the service at boot time
+systemctl list-unit-files # Display the services details
+
+
