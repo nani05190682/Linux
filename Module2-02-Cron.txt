@@ -55,3 +55,11 @@ Keyword    Equivalent
 11.To execute a linux command after every reboot using @reboot Using the @reboot cron keyword, this will execute the specified command once after the machine got booted every time.
 
 @reboot CMD
+
+
+To Check the logs of the Cron:
+
+# tail -f /var/log/cron
+
+To check all User cron jobs
+1. ls -l /var/log/cron/
