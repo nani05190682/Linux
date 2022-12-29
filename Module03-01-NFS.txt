@@ -82,4 +82,121 @@ Create files under the mounted directory and verify it
 
 
 
+Autofs:
+
+		  /projects     server1.gts.com(rw) server2.gts.com(rw,no_root_squash)
+       /projects    server*.gts.com(rw) server*.veecube.com(rw)
+       /projects     *.gts.com(ro) 
+       /projects     *(ro)
+       /projects     2001:db8:9:e54::/64(rw) 192.0.2.0/24(rw)
+       /projects     server[241-250].gts.com(rw)
+
+
+server1.gts.com
+...
+
+server250.gts.com
+
+
+
+Autofs:
+
+[root@client ~]# mkdir /nfs-auto
+[root@client ~]#
+
+
+1. Package : autofs
+
+[root@client ~]# yum install autofs
+Last metadata expiration check: 0:42:32 ago on Thursday 29 December 2022 10:18:28 AM.
+Dependencies resolved.
+================================================================================================
+ Package                 Architecture     Version                        Repository        Size
+================================================================================================
+Installing:
+ autofs                  x86_64           1:5.1.7-27.0.1.el9             baseos           427 k
+Installing dependencies:
+ libsss_autofs           x86_64           2.6.2-2.0.1.el9                baseos            33 k
+
+Transaction Summary
+================================================================================================
+Install  2 Packages
+
+Total download size: 461 k
+Installed size: 1.1 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/2): libsss_autofs-2.6.2-2.0.1.el9.x86_64.rpm                 1.7 MB/s |  33 kB     00:00
+(2/2): autofs-5.1.7-27.0.1.el9.x86_64.rpm                        15 MB/s | 427 kB     00:00
+------------------------------------------------------------------------------------------------
+Total                                                            15 MB/s | 461 kB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                        1/1
+  Installing       : libsss_autofs-2.6.2-2.0.1.el9.x86_64                                   1/2
+  Installing       : autofs-1:5.1.7-27.0.1.el9.x86_64                                       2/2
+  Running scriptlet: autofs-1:5.1.7-27.0.1.el9.x86_64                                       2/2
+  Verifying        : autofs-1:5.1.7-27.0.1.el9.x86_64                                       1/2
+  Verifying        : libsss_autofs-2.6.2-2.0.1.el9.x86_64                                   2/2
+
+Installed:
+  autofs-1:5.1.7-27.0.1.el9.x86_64             libsss_autofs-2.6.2-2.0.1.el9.x86_64
+
+Complete!
+[root@client ~]#
+
+
+2. Enable autofs and start the service
+
+[root@client ~]# systemctl status autofs
+○ autofs.service - Automounts filesystems on demand
+     Loaded: loaded (/usr/lib/systemd/system/autofs.service; disabled; vendor preset: disabled)
+     Active: inactive (dead)
+[root@client ~]# systemctl start autofs
+[root@client ~]# systemctl enable autofs
+Created symlink /etc/systemd/system/multi-user.target.wants/autofs.service → /usr/lib/systemd/system/autofs.service.
+[root@client ~]# systemctl status autofs
+● autofs.service - Automounts filesystems on demand
+     Loaded: loaded (/usr/lib/systemd/system/autofs.service; enabled; vendor preset: disabled)
+     Active: active (running) since Thu 2022-12-29 11:01:34 IST; 6s ago
+   Main PID: 31942 (automount)
+      Tasks: 5 (limit: 10716)
+     Memory: 3.7M
+        CPU: 20ms
+     CGroup: /system.slice/autofs.service
+             └─31942 /usr/sbin/automount --systemd-service --dont-check-daemon
+
+Dec 29 11:01:34 client.gts.com systemd[1]: Starting Automounts filesystems on demand...
+Dec 29 11:01:34 client.gts.com systemd[1]: Started Automounts filesystems on demand.
+[root@client ~]#
+
+3. Config file : /etc/auto.master ( vi /etc/auto.master)
+/nfs-auto       /etc/auto.misc
+
+
+4. Reference file: /etc/auto.misc and modify misc
+# vim /etc/auto.misc
+sabari          -fstype=nfs             192.168.224.128:/nfs-share
+
+5. Restart Autofs service
+[root@client ~]# systemctl restart autofs
+[root@client ~]# cd /nfs-auto/
+[root@client nfs-auto]# ls
+[root@client nfs-auto]# cd sabari
+[root@client sabari]# pwd
+/nfs-auto/sabari
+[root@client sabari]# ls
+file1    file17  file25  file33  file41  file5   file58  file66  file74  file82  file90  file99
+file10   file18  file26  file34  file42  file50  file59  file67  file75  file83  file91
+file100  file19  file27  file35  file43  file51  file6   file68  file76  file84  file92
+file11   file2   file28  file36  file44  file52  file60  file69  file77  file85  file93
+file12   file20  file29  file37  file45  file53  file61  file7   file78  file86  file94
+file13   file21  file3   file38  file46  file54  file62  file70  file79  file87  file95
+file14   file22  file30  file39  file47  file55  file63  file71  file8   file88  file96
+file15   file23  file31  file4   file48  file56  file64  file72  file80  file89  file97
+file16   file24  file32  file40  file49  file57  file65  file73  file81  file9   file98
+[root@client sabari]#
 
