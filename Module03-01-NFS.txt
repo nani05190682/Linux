@@ -38,7 +38,7 @@ drwxr-xr-x 2 root root 6 Dec 27 10:08 /nfs-share/
 
 Verify the available shares from Server
 
-[root@server ~]# showmount -e localhost
+[root@server ~]# showmount -e localhost  ## It checks from local machine 
 Export list for localhost:
 /nfs-share 192.168.224.131
 [root@server ~]#
@@ -51,7 +51,7 @@ Client-Side Configuration
 1. Check the available shares
    # showmount -e <server_ip>
 
-	[root@client ~]# showmount -e 192.168.224.128
+	[root@client ~]# showmount -e 192.168.224.128 ## IP address of your remote server ( nfs server)
 	Export list for 192.168.224.128:
 	/nfs-share 192.168.224.131
 	[root@client ~]#
@@ -84,7 +84,7 @@ Create files under the mounted directory and verify it
 
 Autofs:
 
-		  /projects     server1.gts.com(rw) server2.gts.com(rw,no_root_squash)
+	/projects     server1.gts.com(rw) server2.gts.com(rw,no_root_squash)
        /projects    server*.gts.com(rw) server*.veecube.com(rw)
        /projects     *.gts.com(ro) 
        /projects     *(ro)
