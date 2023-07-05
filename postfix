@@ -44,7 +44,8 @@ mail_spool_directory declares the directory where mailbox files are placed, like
 mail_spool_directory = /var/mail
 mynetworks declares a list of trusted remote SMTP servers that can relay through the server, like this:
 mynetworks = 127.0.0.0/8, 168.100.189.0/28
-The list provided with mynetworks should only contain local network IP addresses, or network/netmask patterns that are separated by commas or whitespace. It’s important to only use local network addresses to avoid unauthorized users using your mail server for malicious activity, resulting in your server and addresses being blacklisted.
+The list provided with mynetworks should only contain local network IP addresses, or network/netmask patterns that are separated by commas or whitespace. 
+It’s important to only use local network addresses to avoid unauthorized users using your mail server for malicious activity, resulting in your server and addresses being blacklisted.
 
 Testing Postfix
 Before putting something into production, testing it in a dev environment is always a good idea. This process has the same concept: Once you get the mail server configured, test it to make sure that it works.
@@ -72,6 +73,79 @@ Hello,
 This is a test message
 
 .
-In order to finish the message body and close it, you need to add a single period (.) or dot on a line by itself. Once this process is complete, the server will attempt to send the email with the information you provided. The code response will notify you if the email was successful or not. Once done, use the quit command to close the mailing window.
+In order to finish the message body and close it, you need to add a single period (.) or dot on a line by itself. 
+Once this process is complete, the server will attempt to send the email with the information you provided. The code response will notify you if the email was successful or not. 
+Once done, use the quit command to close the mailing window.
 
-In any regard, check the mail logs for errors. They are located in /var/log/maillog by default, but this location can be changed to another place. As a system administrator, checking error logs is a good habit to have. This practice is great in troubleshooting and gives us insight into identifying and fixing an issue faster. Deciphering mail logs is an important part of admin work as well, as each part of the log lets us know what is important. In my past years, knowing these parts has helped me write scripts for specific requests while only needing to redact or leave out parts of the mail logs.
+In any regard, check the mail logs for errors. They are located in /var/log/maillog by default, but this location can be changed to another place. As a system administrator, 
+checking error logs is a good habit to have. This practice is great in troubleshooting and gives us insight into identifying and fixing an issue faster. 
+Deciphering mail logs is an important part of admin work as well, as each part of the log lets us know what is important. In my past years, 
+knowing these parts has helped me write scripts for specific requests while only needing to redact or leave out parts of the mail logs.
+
+
+Creating Aliases:
+# useradd unixadmins
+# vim /etc/aliases
+
+unixadmins:	user1, user2, user3
+[root@server ~]# vim /etc/aliases
+[root@server ~]# systemctl restart postfix
+[root@server ~]# newaliases
+[root@server ~]# 
+[root@server ~]# 
+[root@server ~]# 
+[root@server ~]# mail -s "multi mail" unixadmins@localhost
+To: unixadmins@localhost
+Subject: multi mail
+
+Test ALiased
+^D
+-------
+(Preliminary) Envelope contains:
+To: unixadmins@localhost
+Subject: multi mail
+Send this message [yes/no, empty: recompose]? yes
+[root@server ~]# 
+[root@server ~]# 
+[root@server ~]# 
+[root@server ~]# su - user1
+Last login: Wed Jul  5 09:51:15 IST 2023 on pts/0
+[user1@server ~]$ mail
+s-nail version v14.9.22.  Type `?' for help
+/var/spool/mail/user1: 2 messages 1 new
+    1 root                  2023-07-05 09:46   16/525   "test mail                                                            "
+▸N  2 root                  2023-07-05 09:52   15/518   "multi mail                                                           "
+& 2
+[-- Message  2 -- 15 lines, 518 bytes --]:
+Date: Wed, 05 Jul 2023 09:52:12 +0530
+To: unixadmins@localhost
+Subject: multi mail
+Message-Id: <20230705042212.4FB9C4841B@server.lynsyscloud.com>
+From: root <root@server.lynsyscloud.com>
+
+Test ALiased
+
+& q
+Held 2 messages in /var/spool/mail/user1
+[user1@server ~]$ 
+logout
+[root@server ~]# su - user2
+Last login: Wed Jul  5 09:51:23 IST 2023 on pts/0
+[user2@server ~]$ mail
+s-nail version v14.9.22.  Type `?' for help
+/var/spool/mail/user2: 1 message 1 new
+▸N  1 root                  2023-07-05 09:52   15/518   "multi mail                                                           "
+& q
+Held 1 message in /var/spool/mail/user2
+[user2@server ~]$ 
+logout
+[root@server ~]# su - user3
+[user3@server ~]$ mail
+s-nail version v14.9.22.  Type `?' for help
+/var/spool/mail/user3: 1 message 1 new
+▸N  1 root                  2023-07-05 09:52   15/518   "multi mail                                                           "
+& Interrupt
+& q
+Held 1 message in /var/spool/mail/user3
+[user3@server ~]$ 
+
