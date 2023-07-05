@@ -41,6 +41,8 @@ After Postfix is installed, you can start configuring the service to your liking
 The main configuration file for the Postfix service is located at /etc/postfix/main.cf. 
 Within the configuration file, there are many options that you can add, some of them more common than others. Let's go over a few you may see the most when setting up the service, and when needing to troubleshooting it:
 
+
+inet_interfaces = All
 myhostname declares the mail server’s hostname. Hostnames normally have prefixes in them, like this:
 myhostname = mail.sinisterriot.com
 mydomain declares the domain that is actually handling mail, like this:
