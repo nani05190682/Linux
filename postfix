@@ -11,7 +11,8 @@ Configuration File: /etc/postfix/main.cf
 Service : postfix
 
 
-The most commonly used implementations of SMTP in most Linux distros are Sendmail and Postfix. Postfix is an open source mail-transfer agent that was originally developed as an alternative to Sendmail and is usually set up as the default mail server.
+The most commonly used implementations of SMTP in most Linux distros are Sendmail and Postfix. 
+Postfix is an open source mail-transfer agent that was originally developed as an alternative to Sendmail and is usually set up as the default mail server.
 
 Installing Postfix
 Skip to the bottom of list
@@ -21,7 +22,9 @@ Download RHEL 9 at no charge through the Red Hat Developer program
 A guide to installing applications on Linux
 Linux system administration skills assessment
 How well do you know Linux? Take a quiz and get a badge
-Before beginning to install, first things first. A good habit to have is to check and see if the software is installed on the server already. It’s always helpful to check if something is there before getting to work.
+
+Before beginning to install, first things first. A good habit to have is to check and see if the software is installed on the server already. 
+It’s always helpful to check if something is there before getting to work.
 
 To check on RPM-based distros, use this command:
 
@@ -34,7 +37,9 @@ After Postfix is installed, you can start the service and enable it to make sure
 $ systemctl start postfix
 $ systemctl enable postfix
 Configuring Postfix
-After Postfix is installed, you can start configuring the service to your liking. All of the options you need for the service are located in /etc/postfix. The main configuration file for the Postfix service is located at /etc/postfix/main.cf. Within the configuration file, there are many options that you can add, some of them more common than others. Let's go over a few you may see the most when setting up the service, and when needing to troubleshooting it:
+After Postfix is installed, you can start configuring the service to your liking. All of the options you need for the service are located in /etc/postfix. 
+The main configuration file for the Postfix service is located at /etc/postfix/main.cf. 
+Within the configuration file, there are many options that you can add, some of them more common than others. Let's go over a few you may see the most when setting up the service, and when needing to troubleshooting it:
 
 myhostname declares the mail server’s hostname. Hostnames normally have prefixes in them, like this:
 myhostname = mail.sinisterriot.com
