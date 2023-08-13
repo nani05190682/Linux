@@ -96,5 +96,3 @@ Certainly! Here's a guide on how to configure Postfix as an SMTP server on CentO
 - Attempts to use the server as an open relay from external machines should fail.
 
 ---
-
-Remember to always keep your Postfix installation and CentOS system updated, and periodically review Postfix documentation to ensure optimal and secure configuration.
