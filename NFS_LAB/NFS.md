@@ -98,4 +98,3 @@ sudo systemctl restart nfs-server
 
 ---
 
-I hope these exercises help in understanding NFS setup on CentOS. Always ensure proper backups and tests before making changes in a real-world or production environment.
