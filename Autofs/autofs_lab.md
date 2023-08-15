@@ -1,4 +1,4 @@
-Automount in CentOS 8 uses the `autofs` service to automatically mount filesystems when they are accessed and unmount them after a period of inactivity. Here are three lab exercises focused on `autofs`:
+Automount in CentOS 8 uses the `autofs` service to automatically mount filesystems when they are accessed and unmount them after a period of inactivity. Here are the lab exercises focused on `autofs`:
 
 ### **Lab Exercise 1: Basic Automount of an NFS Share**
 
