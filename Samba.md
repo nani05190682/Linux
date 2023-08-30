@@ -3,12 +3,17 @@
 Samba:
 
 Services:
+
 	Ø SMB
+ 
 	Ø NMB
+ 
 	Ø Winbind
 
 Package: Samba
+
 Configuration File : /etc/samba.smb.conf
+
 Services: smb
 
 
@@ -16,6 +21,7 @@ Services: smb
 
 
 Step1: Install "samba" Package
+
 Step2: Modify /etc/samba.smb.conf file
 
 
