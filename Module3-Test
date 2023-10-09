@@ -1,0 +1,39 @@
+
+
+1. Configure a yum repo
+	1. Create a repo servers with repo name "myrepo"
+	2. Update the repo details on Client server and install ypbind package
+
+2. Create a DNS server
+	1. Domain name should be veecubeinfratech.com
+	2. Make sure both forward and reverse lookup zone is working.
+	3. Add the Client IP address and Verify it is resolving from both server/Client.
+
+
+3. Configure Mail server
+	1. Configure mail server with a maildomain "veecubeinfratech.com"
+	2. Create 2 user ID's 'mailuser1' and 'mailuser2'
+	3. Send a mail from 'mailuser1' to 'mailuser2' and verify you are receiving mails.
+
+
+	4. Create a mail alias with the name "mygroupmail" and add these accounts ('mailuser1' and 'mailuser2')
+
+	5. Send a mail to "mygroupmail" and make sure both the users ('mailuser1' and 'mailuser2') are receiving mails.
+
+
+4. Configure VSFTP with anaonymous upload enabled.
+	1. Create a file with 1MB and upload it as an anonymous user
+	2. Create a user  'ftpuser' and make sure if the user is restricted to access FTP.
+
+	
+5. Configure Apache server with the domain name "www.veecubeifratech.com" and it should have a webpacge content "Hello Linux Admins !!!"
+
+
+6. Create a NFS server with below details.
+	1. Create a directory "/mydata"  from the server and share it to the client ( hostname not ip )
+	2. Mount it on the client machine using Autofs 
+
+	7. Confugure a samba share 
+		a. Share : /mysambashare
+		b. User: mysambauser
+		c. Mount Path : /data/mysambaclient
