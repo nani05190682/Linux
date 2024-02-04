@@ -1,3 +1,8 @@
+Packages Required: nfs-utils
+Port: 2049
+Configuration file: /etc/exports
+service: nfs-server
+
 1. Install necessary package:
 
 # yum install nfs-utils
