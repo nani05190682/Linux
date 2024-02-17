@@ -13,3 +13,24 @@
 #        RewriteRule ^(.*)$ http://url2.veecube.com/$1 [R=301,L]
     </Directory>
 </VirtualHost>
+
+
+## New File
+
+<VirtualHost *:80>
+    ServerAdmin webmaster@dummy-host2.example.com
+    DocumentRoot "/var/www/url1"
+    ServerName url1.veecube.com
+    ErrorLog "/var/log/httpd/url1.veecube.com-error_log"
+    CustomLog "/var/log/httpd/url1.veecube.com-access_log" common
+
+     ProxyPass / http://url2.veecube.com/
+     ProxyPassReverse / http://url2.veecube.com/
+#     ProxyPassReverseCookieDomain url2.veecube.com url1.veecube.com
+
+#    <Directory "/var/www/url1">
+#        RewriteEngine On
+#        RewriteRule ^(.*)$ http://url2.veecube.com/$1 [L,R=301]
+
+#    </Directory>
+</VirtualHost>
