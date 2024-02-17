@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+    ServerAdmin webmaster@dummy-host2.example.com
+    DocumentRoot "/var/www/url1"
+    ServerName url1.veecube.com
+    ErrorLog "/var/log/httpd/url1.veecube.com-error_log"
+    CustomLog "/var/log/httpd/url1.veecube.com-access_log" common
+
+    <Directory "/var/www/url1">
+        RewriteEngine On
+        RewriteRule ^(.*)$ http://url2.veecube.com/$1 [L,R=301]
+
+#        RewriteCond %{HTTP_HOST} ^url1\.veecube\.com$ [NC]
+#        RewriteRule ^(.*)$ http://url2.veecube.com/$1 [R=301,L]
+    </Directory>
+</VirtualHost>
