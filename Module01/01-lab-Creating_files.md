@@ -73,4 +73,4 @@ touch NewDirectory/NewFile.txt
 rm -r NewDirectory
 ```
 
-**Note:** Exercise caution when using the `rm` command, as it permanently deletes files and directories without moving them to the trash. Make sure you are removing the correct files or directories.
+
