@@ -1,3 +1,22 @@
+![image](https://github.com/nani05190682/Linux/assets/87597729/f145c533-0155-4b07-8339-c43b4f69da32)
+
+
+
+
+![image](https://github.com/nani05190682/Linux/assets/87597729/96299b48-afed-405e-9270-87f8bd560534)
+
+
+
+
+![image](https://github.com/nani05190682/Linux/assets/87597729/10569110-bf97-40d1-b1e4-9ea1eba79c32)
+
+
+
+
+
+
+
+
 
 Configure DNS:
 
