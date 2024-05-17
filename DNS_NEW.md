@@ -22,7 +22,11 @@ Configure DNS:
 Pakages Required: bind, bind-utils
 
 
-Configuration File: /etc/named.conf ; /etc/named.rfc1912.zone ; /etc/resolv.conf
+Configuration File: /etc/named.conf ; 
+
+/etc/named.rfc1912.zone ; 
+
+/etc/resolv.conf
 
 
 Port: 53
