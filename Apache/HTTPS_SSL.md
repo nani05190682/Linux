@@ -85,14 +85,7 @@ SSLCertificateKeyFile /etc/pki/tls/private/my-private-key.key
 
 Save and exit the editor.
 
-### 4. Adjust the Firewall:
 
-If you're using `firewalld`, you need to allow HTTPS traffic through:
-
-```bash
-sudo firewall-cmd --add-service=https --permanent
-sudo firewall-cmd --reload
-```
 
 ### 5. Restart Apache:
 
