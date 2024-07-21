@@ -95,11 +95,11 @@ Troubleshooting with `systemd` on RHEL 8 involves a variety of tools and command
 
 ### Advanced Diagnostics
 
-1. **Debugging a Service**
+**1. **Debugging a Service**
    - Start the service in debug mode:
      ```bash
      systemctl start <service_name> -v
-     ```
+     ```**
 
 2. **Checking Dependencies**
    - List dependencies of a service:
@@ -134,7 +134,7 @@ The `top` command provides a dynamic, real-time view of the system’s processes
    - Press `M` to sort the processes by memory usage.
 
 4. **Find a Specific Process:**
-   - Press `/` and type the name or PID of the process to search for it.
+   - Press `L` and type the name or PID of the process to search for it.
    - Press `Enter` to highlight the process.
 
 ### Using `ps`
