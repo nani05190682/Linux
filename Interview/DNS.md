@@ -95,4 +95,3 @@
       - Monitor and log DNS activity for suspicious behavior.
       - Use a firewall to restrict DNS traffic to necessary ports.
 
-These answers should provide a comprehensive overview for interview preparation on DNS topics in Red Hat Linux.
