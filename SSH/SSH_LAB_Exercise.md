@@ -28,14 +28,7 @@
 5. From the client, connect to the server using SSH key authentication.
 
 
-### Lab Exercise 5: Using SSH Config File for Simplifying Connections
 
-**Objective**: Use the SSH client configuration file to define connection shortcuts and parameters.
-
-1. On the client machine, edit the `~/.ssh/config` file.
-2. Add an entry for your CentOS 8 server, specifying parameters like hostname, user, port, and key.
-3. Use the `ssh` command with the shortcut name to connect to the CentOS 8 server.
-4. Experiment by adding other configuration options, such as using a specific identity file or setting up dynamic port forwarding.
 
 
 ### Solutions
