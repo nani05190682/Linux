@@ -27,14 +27,6 @@
 4. Restart the SSH service on the server.
 5. From the client, connect to the server using SSH key authentication.
 
-### Lab Exercise 4: SSH Tunneling and Port Forwarding
-
-**Objective**: Use SSH to securely tunnel a non-secure protocol, such as HTTP.
-
-1. Set up a basic HTTP server on your CentOS 8 machine.
-2. From a remote client, attempt to access the HTTP site to ensure it's working.
-3. Use SSH to create a local port forwarding tunnel, redirecting a local port on the client to the server's HTTP port.
-4. On the client, access the HTTP service through the local port to confirm the tunneling works.
 
 ### Lab Exercise 5: Using SSH Config File for Simplifying Connections
 
@@ -178,4 +170,79 @@
    ```
 
 4. Experiment with other options as needed.
+
+
+Allowing root login via SSH on RHEL 9 involves modifying the SSH configuration file to permit root login. While enabling root login is generally discouraged for security reasons, if it's necessary in your environment, you can follow these steps.
+
+### Steps to Allow Root Login via SSH
+
+1. **Edit the SSH Configuration File**
+   - Open the `/etc/ssh/sshd_config` file using a text editor:
+   ```bash
+   sudo vi /etc/ssh/sshd_config
+   ```
+
+2. **Locate the PermitRootLogin Directive**
+   - Find the line that contains `PermitRootLogin`. It might be commented out (with `#`) or set to `no`:
+   ```bash
+   #PermitRootLogin no
+   ```
+
+3. **Change the PermitRootLogin Setting**
+   - Uncomment the line (remove the `#`) and change the value to `yes`:
+   ```bash
+   PermitRootLogin yes
+   ```
+
+4. **Restart the SSH Service**
+   - Save the changes and restart the SSH service to apply the new configuration:
+   ```bash
+   sudo systemctl restart sshd
+   ```
+
+5. **Optional: Check Firewall and SELinux**
+   - Ensure that SSH is allowed through the firewall (if not already configured):
+   ```bash
+   sudo firewall-cmd --permanent --add-service=ssh
+   sudo firewall-cmd --reload
+   ```
+   - If SELinux is enforcing policies that prevent root login, you may need to adjust SELinux settings or disable SELinux temporarily:
+   ```bash
+   sudo setenforce 0
+   ```
+
+6. **Login as Root**
+   - Now, attempt to log in as root via SSH:
+   ```bash
+   ssh root@<IP_of_Host>
+   ```
+
+
+
+To deny a user access via SSH on RHEL 9, you can configure this in the SSH server configuration file (`/etc/ssh/sshd_config`). Below are the methods for denying a user from accessing the system via SSH.
+
+### Method 1: Using `DenyUsers` Directive
+
+1. **Edit the SSH Configuration File**  
+   Open the `/etc/ssh/sshd_config` file using a text editor.
+   ```bash
+   sudo vi /etc/ssh/sshd_config
+   ```
+
+2. **Add `DenyUsers` Directive**  
+   In the file, add the `DenyUsers` directive followed by the username(s) you want to block.
+   ```bash
+   DenyUsers username1 username2
+   ```
+   For example, to deny the user `testuser` from logging in via SSH, you would add:
+   ```bash
+   DenyUsers testuser
+   ```
+
+3. **Restart the SSH Service**  
+   After saving the changes, restart the SSH service to apply the configuration.
+   ```bash
+   sudo systemctl restart sshd
+
+
 
