@@ -130,46 +130,6 @@
 
 5. From the client, SSH should now use key authentication.
 
-### Solution for Lab Exercise 4: SSH Tunneling and Port Forwarding
-
-1. Set up a basic HTTP server (assuming you use `httpd`):
-   ```bash
-   sudo dnf install httpd
-   sudo systemctl start httpd
-   sudo systemctl enable httpd
-   ```
-
-2. From a remote client, access using a browser: `http://server_ip`.
-
-3. Create an SSH tunnel:
-   ```bash
-   ssh -L 8080:localhost:80 username@server_ip
-   ```
-
-4. On the client, access the site via `http://localhost:8080`.
-
-### Solution for Lab Exercise 5: Using SSH Config File for Simplifying Connections
-
-1. On the client machine, edit the config:
-   ```bash
-   nano ~/.ssh/config
-   ```
-
-2. Add an entry:
-   ```
-   Host myserver
-       HostName server_ip
-       User username
-       Port 22
-       IdentityFile ~/.ssh/id_rsa
-   ```
-
-3. Use the `ssh` command with the shortcut:
-   ```bash
-   ssh myserver
-   ```
-
-4. Experiment with other options as needed.
 
 
 Allowing root login via SSH on RHEL 9 involves modifying the SSH configuration file to permit root login. While enabling root login is generally discouraged for security reasons, if it's necessary in your environment, you can follow these steps.
