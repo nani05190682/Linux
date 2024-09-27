@@ -9,6 +9,10 @@ The goal of this lab exercise is to understand and practice managing file and di
 - Basic understanding of Linux terminal commands.
 - Access to a Linux system (physical or virtual).
 
+
+https://miro.medium.com/v2/resize:fit:666/1*-T25a5h_HF54jCYVlXKxHA@2x.png![Uploading image.png…]()
+
+
 ---
 
 ### Part 1: Understanding File Permissions
